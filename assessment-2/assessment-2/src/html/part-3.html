@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Sum of all arguments:</p>
+<p id="demo"></p>
+<p id="d"></p>
+
+<script>
+    var person = {first:"john",last:"bravo"};
+    document.getElementById("d").innerHTML = person.last;
+    var second=testValue(person);
+    document.getElementById("demo").innerHTML = second.last;
+
+    function testValue(p){
+        p.last = "gaddar";
+        return p;
+    }
+
+</script>
+
+</body>
+</html>

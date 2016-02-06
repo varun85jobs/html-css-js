@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Guess the color</title>
+</head>
+<body>
+<script>
+    var colorArray = ["blue", "cyan", "gold", "gray", "green", "magenta", "orange", "red", "white", "yellow"];
+    var target = Math.floor(Math.random() * 10);
+    console.log("number chosen : " + target);
+    var selectedColour = colorArray[target];
+    var count = 0;
+    var guessed = false;
+    do {
+        var input = prompt("I am thinking of one of these colours\n\nblue, cyan, gold, gray, green, magenta, orange" +
+        ",red,white,yellow\n\nWhat color I am thinking of?");
+        count++;
+        var index = colorArray.indexOf(input);
+        if ( index != -1) {
+            if (index == target) {
+                alert("Congratulations! You have guessed the color!\n\nIt took you " + count + " guesses to finish the game!" +
+                "\n\nYou can see the colour in the background")
+                document.body.style.backgroundColor = input;
+                guessed = true;
+            } else if (index < target) {
+                alert("Sorry, your guess is not correct!\n\nHint:your colour is alphabetically lower than mine" +
+                "\n\nPlease try again.");
+            }else{
+                alert("Sorry, your guess is not correct!\n\nHint:your colour is alphabetically higher than mine" +
+                "\n\nPlease try again.");
+            }
+        } else {
+            alert("Sorry, I don't recognise your colour!\n\nPlease try again.");
+        }
+    } while (!guessed)
+</script>
+</body>
+</html>
